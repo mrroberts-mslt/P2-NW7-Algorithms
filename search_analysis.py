@@ -2,10 +2,8 @@ import random
 import time
 
 def linear_search(v, L):
-    #global comparisons
-
+    
     for index in range(len(L)):
-        #comparisons = comparisons + 1
         if L[index] == v:
             return index
             
@@ -13,13 +11,11 @@ def linear_search(v, L):
 
 
 def binary_search(v, L):
-    #global comparisons
     
     low = 0
     high = len(L)-1
 
     while (low <= high):
-        #comparisons = comparisons + 1
         
         mid = (low+high)//2
         
@@ -33,7 +29,7 @@ def binary_search(v, L):
     return -1
 
 
-# Driver code 1 ...
+# Driver code ...
 some_list = list(range(1000000))
 target = -1 # worst case because -1 never exists
 
@@ -45,15 +41,5 @@ end_time = time.perf_counter()
 # difference of start and end times gives the execution time
 print("List Length (%d) \t Execution Time (%f)" %(len(some_list), (end_time-start_time) ))
 
-
-'''
-# Driver code 2 ...
-print("%s\t\t %s\t\t %s" %("List Size", "Found Index", "#Comparisons"))
-for list_size in [1, 10, 100, 1000, 10000, 100000, 1000000]:
-    some_list = list(range(list_size))
-    random.shuffle(some_list)
-    comparisons = 0
-    target = -1 # worst case because -1 never exists
-    pos = linear_search(target, some_list)
-    print("%d\t\t %d\t\t %d" %(len(some_list), pos, comparisons))
-'''
+# Conclusion:
+# Time is not a good measure of performance (because it is machine dependent)
